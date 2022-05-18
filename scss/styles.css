@@ -8,6 +8,8 @@
   font-size: 3rem;
   font-family: "Quicksand", sans-serif;
   border: 1px solid black;
+  color: black;
+  text-decoration: none;
 }
 .calculator__button--number {
   background-color: orange;
@@ -24,6 +26,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  justify-content: flex-start;
   height: 100vh;
 }
 
@@ -35,7 +38,7 @@ body {
   grid-auto-flow: row;
   grid-template-areas: "calculator__display calculator__display calculator__display calculator__display" "clear polarity percentage divide" "seven eight nine multiply" "four five six subtract" "one two three add" "zero zero decimal-point calculate";
   width: 100vw;
-  height: 80vh;
+  height: 85vh;
 }
 
 .calculator__display {
