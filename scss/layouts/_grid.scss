@@ -1,3 +1,17 @@
+// Mobile Specific Styling
+
+@media only screen and (min-width: 768px) {
+
+  .calculator {
+
+    width: 500px;
+    height: 800px;
+
+  }
+}
+
+// Grid Rules
+
 .calculator {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -11,9 +25,8 @@
       "four five six subtract"
       "one two three add"
       "zero zero decimal-point calculate";
-
-    width: 500px;
-    height: 800px;
+      width: 100vw;
+      height: 100vh;
   }
   
   .calculator__display { grid-area: calculator__display; }
