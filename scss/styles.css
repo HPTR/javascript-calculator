@@ -35,7 +35,7 @@ body {
   grid-auto-flow: row;
   grid-template-areas: "calculator__display calculator__display calculator__display calculator__display" "clear polarity percentage divide" "seven eight nine multiply" "four five six subtract" "one two three add" "zero zero decimal-point calculate";
   width: 100vw;
-  height: 100vh;
+  height: 80vh;
 }
 
 .calculator__display {
