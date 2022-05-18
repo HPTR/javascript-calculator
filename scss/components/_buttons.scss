@@ -4,5 +4,18 @@
     &__button {
         font-size: 3rem;
         font-family: $font-primary;
+        border: 1px solid black;
+
+        &--number {
+            background-color: orange;
+        }
+
+        &--operator {
+            background-color: lightcoral;
+        }
+
+        &--function {
+            background-color: lightgrey;
+        }
     }
 }
