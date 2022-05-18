@@ -20,7 +20,18 @@
 .calculator__button--function {
   background-color: lightgrey;
 }
+.calculator__button:active {
+  filter: brightness(60%);
+}
 
+@media only screen and (min-width: 768px) {
+  .calculator__button:hover {
+    filter: brightness(90%);
+  }
+  .calculator__button:active {
+    filter: brightness(60%);
+  }
+}
 body {
   display: flex;
   justify-content: center;
@@ -134,5 +145,18 @@ body {
   .calculator {
     width: 500px;
     height: 800px;
+    border: 20px solid black;
+    border-radius: 40px;
+  }
+  .calculator__display {
+    border-radius: 20px 20px 0px 0px;
+  }
+
+  .zero {
+    border-radius: 0px 0px 0px 20px;
+  }
+
+  .calculate {
+    border-radius: 0px 0px 20px 0px;
   }
 }/*# sourceMappingURL=styles.css.map */
