@@ -1,0 +1,8 @@
+@use "../abstracts/variables" as *;
+
+.calculator {
+    &__button {
+        font-size: 3rem;
+        font-family: $font-primary;
+    }
+}
