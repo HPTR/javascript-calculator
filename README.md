@@ -2,7 +2,7 @@
 
 ## About
 
-This is my second portfolio project for the _nology consultancy course. This project was designed to demonstrate knowledge od JavaScript and integrating it with HTML and CSS.
+This is my second portfolio project for the _nology consultancy course. This project was designed to demonstrate knowledge of JavaScript and integrating it with HTML and CSS.
 
 The requirements for this project were as follows:
 
@@ -15,6 +15,6 @@ The requirements for this project were as follows:
 - Take a mobile first approach
 - When copying code from sources online: **if you can't explain it, you can't use it**
 
-## You can visit the GitHub Pages site here!
+## You can visit the GitHub Pages site here:
 
 https://hptr.github.io/javascript-calculator/
