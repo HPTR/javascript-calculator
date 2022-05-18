@@ -1,4 +1,8 @@
-@use "./abstracts/abstracts-dir";
-@use "./base/_base-dir";
-@use "./components/components-dir";
-@use "./layouts/layouts-dir";
+@use "./abstracts/mixins";
+@use "./abstracts/fonts";
+@use "./abstracts/variables";
+@use "./base/reset";
+@use "./components/buttons";
+@use "./components/display";
+@use "./layouts/body";
+@use "./layouts/grid";
