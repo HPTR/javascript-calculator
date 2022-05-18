@@ -1,15 +1,3 @@
-// Mobile Specific Styling
-
-@media only screen and (min-width: 768px) {
-
-  .calculator {
-
-    width: 500px;
-    height: 800px;
-
-  }
-}
-
 // Grid Rules
 
 .calculator {
@@ -68,3 +56,13 @@
   .zero { grid-area: zero; }
   
   .decimal-point { grid-area: decimal-point; }  
+
+  // Mobile Specific Styling
+
+@media only screen and (min-width: 768px) {
+
+  .calculator {
+    width: 500px;
+    height: 800px;
+  }
+}
