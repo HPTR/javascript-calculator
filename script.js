@@ -12,10 +12,22 @@ const calculator = {
 }
 
 // Event Handlers
+console.log(display.value[0])
+const handleNumberPress = (event) => {
+//prevents typing more than 10 numbers
+    if (display.value.length === 10) {
+        return false;
+    }
 
-const handleButtonPress = (event) => {
-    console.log(event.target.innerText);
-    display.value = event.target.innerText;
+    //appends display with clicked number
+
+    if (Number(display.value[0]) === 0 && display.value.length === 1) {
+        display.value = event.target.innerText;
+    } else {
+        display.value += event.target.innerText;
+    }
+
+}
 }
 
 // Event Listeners
