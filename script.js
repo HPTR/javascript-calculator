@@ -5,11 +5,13 @@ const allNumbers = document.querySelectorAll('.calculator__button--number');
 const allOperators = document.querySelectorAll('.calculator__button--operator')
 const display = document.getElementById('display');
 const calculate = document.getElementById('calculate');
+const clear = document.getElementById('clear');
 
 const calculator = {
     numOne: undefined,
     numTwo: undefined,
     operator: undefined,
+    result: undefined,
 }
 
 // Event Handlers
@@ -71,12 +73,37 @@ const handleCalculatePress = (event) => {
     display.value = parseFloat(calculator.result.toFixed(8));
 
 }
+
+const handleClearPress = (event) => {
+
+    if (clear.innerText === 'AC') {
+        calculator.numOne = undefined;
+        calculator.numTwo = undefined;
+        calculator.operator = undefined;
+        calculator.result = undefined;
+
+        allOperators.forEach((button) => {
+            button.classList.remove('pressed');
+    });
+    
+    }
+
+    if (calculator.numOne === undefined) {
+        display.value = 0;
+        clear.innerText = 'AC';
+    } else if (calculator.numOne !== undefined) {
+        display.value = 0;
+        clear.innerText = 'AC';
+    }
+
 }
+
+
 
 // Event Listeners
 
 
-// Adds the clicked number to the display
+// Number Press
 allNumbers.forEach((button) => {
     button.addEventListener('click', handleNumberPress);
 });
