@@ -4,6 +4,7 @@ const allButtons = document.querySelectorAll('.calculator__button');
 const allNumbers = document.querySelectorAll('.calculator__button--number');
 const allOperators = document.querySelectorAll('.calculator__button--operator')
 const display = document.getElementById('display');
+const calculate = document.getElementById('calculate');
 
 const calculator = {
     numOne: undefined,
@@ -46,6 +47,25 @@ const handleOperatorPress = (event) => {
             calculator.operator = '*';
         case '÷':
             calculator.operator = '/';
+const handleCalculatePress = (event) => {
+
+    calculator.numTwo = Number(display.value);
+
+    console.log(calculator)
+
+    switch (calculator.operator) {
+        case '+':
+            calculator.result = calculator.numOne + calculator.numTwo;
+            break;
+        case '-':
+            calculator.result = calculator.numOne - calculator.numTwo;
+            break;
+        case '*':
+            calculator.result = calculator.numOne * calculator.numTwo;
+            break;
+        case '/':
+            calculator.result = calculator.numOne / calculator.numTwo;
+            break;
     };
 
     console.log(calculator.operator)
@@ -64,4 +84,8 @@ allOperators.forEach(button => {
     button.addEventListener('click', handleOperatorPress);
 })
 
-console.log(allOperators)
+// Calculate Press
+calculate.addEventListener('click', handleCalculatePress);
+
+// Clear Press
+clear.addEventListener('click', handleClearPress);
