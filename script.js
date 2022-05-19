@@ -1,6 +1,8 @@
 // Variables
 
 const allButtons = document.querySelectorAll('.calculator__button');
+const allNumbers = document.querySelectorAll('.calculator__button--number');
+const allOperators = document.querySelectorAll('.calculator__button--operator')
 const display = document.getElementById('display');
 
 const calculator = {
