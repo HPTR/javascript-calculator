@@ -15,15 +15,30 @@ const calculator = {
 }
 
 // Event Handlers
-console.log(display.value[0])
+
 const handleNumberPress = (event) => {
-//prevents typing more than 10 numbers
-    if (display.value.length === 10) {
-        return false;
+
+    clear.innerText = 'C';
+    calculator.clearStatus = 'clear';
+
+    // Checks if any operators have been pressed and proceeds to type new number if so
+    allOperators.forEach((button, index) => {
+        if (allOperators[index].classList.length === 4) {
+
+            allOperators.forEach((button) => {
+                button.classList.remove('pressed');
+            });
+
+            display.value = event.target.value;
+
+        }
+    });
+
+    if (calculator.result !== undefined) {
+        display.value = event.target.innerText;
     }
 
     //appends display with clicked number
-
     if (Number(display.value[0]) === 0 && display.value.length === 1) {
         display.value = event.target.innerText;
     } else {
