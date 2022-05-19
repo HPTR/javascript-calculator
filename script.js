@@ -53,8 +53,15 @@ const handleOperatorPress = (event) => {
 
 // Event Listeners
 
-allButtons.forEach((button) => {
-    button.addEventListener('click', handleButtonPress)
+
+// Adds the clicked number to the display
+allNumbers.forEach((button) => {
+    button.addEventListener('click', handleNumberPress);
 });
 
-display.value = (8);
+//Operator Press
+allOperators.forEach(button => {
+    button.addEventListener('click', handleOperatorPress);
+})
+
+console.log(allOperators)
