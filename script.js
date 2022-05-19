@@ -34,21 +34,32 @@ const handleNumberPress = (event) => {
 
 const handleOperatorPress = (event) => {
 
+    console.log(event.target);
+
     allOperators.forEach((button) => {
             button.classList.remove('pressed');
     });
 
     event.target.classList.add('pressed'); //Remember to remove this in calculate button press too
     
-    switch (event.target.innerText) {
-        case '+':
+    switch (event.target.id) {
+        case 'add':
             calculator.operator = '+';
-        case '-':
+            break;
+        case 'subtract':
             calculator.operator = '-';
-        case '×':
+            break;
+        case 'multiply':
             calculator.operator = '*';
-        case '÷':
+            break;
+        case 'divide':
             calculator.operator = '/';
+            break;
+    };
+
+    calculator.numOne = Number(display.value);
+}
+
 const handleCalculatePress = (event) => {
 
     calculator.numTwo = Number(display.value);
