@@ -1,0 +1,11 @@
+.calculator {
+    &__display {
+        user-select: none;
+        color: black;
+        background-color: white;
+        border: 1px solid black;
+        font-size: 7rem;
+        text-align: end;
+        padding: 0px 20px;
+    }
+}
