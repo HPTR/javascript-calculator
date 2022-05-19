@@ -68,7 +68,9 @@ const handleCalculatePress = (event) => {
             break;
     };
 
-    console.log(calculator.operator)
+    display.value = parseFloat(calculator.result.toFixed(8));
+
+}
 }
 
 // Event Listeners
