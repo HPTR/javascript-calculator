@@ -28,6 +28,27 @@ const handleNumberPress = (event) => {
     }
 
 }
+
+const handleOperatorPress = (event) => {
+
+    allOperators.forEach((button) => {
+            button.classList.remove('pressed');
+    });
+
+    event.target.classList.add('pressed'); //Remember to remove this in calculate button press too
+    
+    switch (event.target.innerText) {
+        case '+':
+            calculator.operator = '+';
+        case '-':
+            calculator.operator = '-';
+        case '×':
+            calculator.operator = '*';
+        case '÷':
+            calculator.operator = '/';
+    };
+
+    console.log(calculator.operator)
 }
 
 // Event Listeners
