@@ -3,6 +3,12 @@
 const allButtons = document.querySelectorAll('.calculator__button');
 const display = document.getElementById('display');
 
+const calculator = {
+    numOne: undefined,
+    numTwo: undefined,
+    operator: undefined,
+}
+
 // Event Handlers
 
 const handleButtonPress = (event) => {
