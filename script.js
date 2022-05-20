@@ -83,13 +83,21 @@ const handleOperatorPress = (event) => {
 
 const handleCalculatePress = (event) => {
 
-    calculator.numTwo = Number(display.value);
+    if (calculator['lastPressedType'] === 'calculate') {
+        calculator.numOne = display.value;
+    } else {
+        calculator.numTwo = Number(display.value);
+    };
 
-    console.log(calculator)
+    if (!calculator.numTwo || !calculator.numOne) {
+        display.value = display.value
+        calculator.lastPressedType = 'calculate';
+        return;
+    }
 
     switch (calculator.operator) {
         case '+':
-            calculator.result = calculator.numOne + calculator.numTwo;
+            calculator.result = Number(calculator.numOne) + Number(calculator.numTwo);
             break;
         case '-':
             calculator.result = calculator.numOne - calculator.numTwo;
@@ -104,6 +112,7 @@ const handleCalculatePress = (event) => {
 
     display.value = parseFloat(calculator.result.toFixed(8));
 
+    calculator.lastPressedType = 'calculate';
 }
 
 const handleClearPress = (event) => {
