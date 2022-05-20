@@ -53,8 +53,6 @@ const handleNumberPress = (event) => {
 
 const handleOperatorPress = (event) => {
 
-    console.log(event.target);
-
     allOperators.forEach((button) => {
             button.classList.remove('pressed');
     });
