@@ -12,6 +12,7 @@ const calculator = {
     numTwo: undefined,
     operator: undefined,
     result: undefined,
+    lastPressedType: undefined
 }
 
 // Event Handlers
