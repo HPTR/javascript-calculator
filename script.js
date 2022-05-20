@@ -117,7 +117,7 @@ const handleCalculatePress = (event) => {
 
 const handleClearPress = (event) => {
 
-    if (clear.innerText === 'AC') {
+    if (calculator['lastPressedType'] === 'clear') {
         calculator.numOne = undefined;
         calculator.numTwo = undefined;
         calculator.operator = undefined;
@@ -125,21 +125,15 @@ const handleClearPress = (event) => {
 
         allOperators.forEach((button) => {
             button.classList.remove('pressed');
-    });
-    
-    }
+        });
 
-    if (calculator.numOne === undefined) {
-        display.value = 0;
+    } else {
+        display.value = '0';
         clear.innerText = 'AC';
-    } else if (calculator.numOne !== undefined) {
-        display.value = 0;
-        clear.innerText = 'AC';
-    }
+    };
 
+    calculator.lastPressedType = 'clear';
 }
-
-
 
 // Event Listeners
 
