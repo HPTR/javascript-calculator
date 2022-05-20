@@ -19,33 +19,36 @@ const calculator = {
 
 const handleNumberPress = (event) => {
 
+    //Sets Clear button to display C
     clear.innerText = 'C';
-    calculator.clearStatus = 'clear';
 
-    // Checks if any operators have been pressed and proceeds to type new number if so
-    allOperators.forEach((button, index) => {
-        if (allOperators[index].classList.length === 4) {
+    //If a result has just been calculated, reset to default state
+    if (calculator['lastPressedType'] === 'calculate') {
+        calculator.numOne = undefined;
+        calculator.numTwo = undefined;
+        display.value = event.target.value;
+    };
 
-            allOperators.forEach((button) => {
-                button.classList.remove('pressed');
-            });
+    //If an operator was the last button pressed, save the current number, and display the newly clicked number. Also clear pressed status of operators.
+    if (calculator['lastPressedType'] === 'operator') {
 
-            display.value = event.target.value;
+        calculator.numOne = display.value;
+        display.value = event.target.value;
 
-        }
-    });
+        allOperators.forEach((button) => {
+            button.classList.remove('pressed');
+        });
 
-    if (calculator.result !== undefined) {
-        display.value = event.target.innerText;
-    }
+    };
 
-    //appends display with clicked number
-    if (Number(display.value[0]) === 0 && display.value.length === 1) {
-        display.value = event.target.innerText;
-    } else {
-        display.value += event.target.innerText;
-    }
+    //If a button was last pressed, add the pressed number to the current displayed one, if not, start a new number
+    if (calculator['lastPressedType'] === 'number') {
+        display.value += event.target.value;
+     } else {
+        display.value = event.target.value;
+    };
 
+    calculator.lastPressedType = 'number';
 }
 
 const handleOperatorPress = (event) => {
