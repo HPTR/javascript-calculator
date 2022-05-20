@@ -59,7 +59,7 @@ const handleOperatorPress = (event) => {
             button.classList.remove('pressed');
     });
 
-    event.target.classList.add('pressed'); //Remember to remove this in calculate button press too
+    event.target.classList.add('pressed');
     
     switch (event.target.id) {
         case 'add':
@@ -77,6 +77,8 @@ const handleOperatorPress = (event) => {
     };
 
     calculator.numOne = Number(display.value);
+
+    calculator.lastPressedType = 'operator';
 }
 
 const handleCalculatePress = (event) => {
