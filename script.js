@@ -60,7 +60,7 @@ const handleOperatorPress = (event) => {
 
     event.target.classList.add('calculator__button--pressed');
     
-    switch (event.target.id) {
+    switch (event.target.value) {
         case 'add':
             calculator.operator = '+';
             break;
