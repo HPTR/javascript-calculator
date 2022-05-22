@@ -114,7 +114,9 @@ const handleCalculatePress = (event) => {
     calculator.lastPressedType = 'calculate';
 }
 
-const handleClearPress = (event) => {
+const handleFunctionPress = (event) => {
+
+    if (event.target.value === 'clear') {
 
     if (calculator['lastPressedType'] === 'clear') {
         calculator.numOne = undefined;
@@ -132,6 +134,30 @@ const handleClearPress = (event) => {
     };
 
     calculator.lastPressedType = 'clear';
+
+    }
+
+    if (event.target.value === 'percentage') {
+        display.value = Number(display.value) / 100;
+
+        calculator.lastPressedType = 'percentage';
+    }
+
+    if (event.target.value === 'polarity') {
+        if (display.value[0] === '-') {
+            display.value = display.value.substring(1);
+        } else {
+            display.value = '-' + display.value;
+        }
+
+        calculator.lastPressedType = 'polarity';
+    }
+
+
+}
+
+const handlePercentagePress = (event) => {
+    display.value = display.value / 100;
 }
 
 // Event Listeners
@@ -150,5 +176,7 @@ allOperators.forEach(button => {
 // Calculate Press
 calculate.addEventListener('click', handleCalculatePress);
 
-// Clear Press
-clear.addEventListener('click', handleClearPress);
+// Function Press
+allFunctions.forEach(button => {
+    button.addEventListener('click', handleFunctionPress);
+})
