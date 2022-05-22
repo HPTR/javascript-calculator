@@ -2,10 +2,11 @@
 
 const allButtons = document.querySelectorAll('.calculator__button');
 const allNumbers = document.querySelectorAll('.calculator__button--number');
-const allOperators = document.querySelectorAll('.calculator__button--operator')
-const display = document.getElementById('display');
-const calculate = document.getElementById('calculate');
-const clear = document.getElementById('clear');
+const allOperators = document.querySelectorAll('.calculator__button--operator');
+const allFunctions = document.querySelectorAll('.calculator__button--function');
+const display = document.querySelector('.calculator__display');
+const calculate = document.querySelector('.calculate');
+const clear = document.querySelector('.clear');
 
 const calculator = {
     numOne: undefined,
