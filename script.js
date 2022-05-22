@@ -37,7 +37,7 @@ const handleNumberPress = (event) => {
         display.value = event.target.value;
 
         allOperators.forEach((button) => {
-            button.classList.remove('pressed');
+            button.classList.remove('calculator__button--pressed');
         });
 
     };
@@ -55,10 +55,10 @@ const handleNumberPress = (event) => {
 const handleOperatorPress = (event) => {
 
     allOperators.forEach((button) => {
-            button.classList.remove('pressed');
+            button.classList.remove('calculator__button--pressed');
     });
 
-    event.target.classList.add('pressed');
+    event.target.classList.add('calculator__button--pressed');
     
     switch (event.target.id) {
         case 'add':
@@ -123,7 +123,7 @@ const handleClearPress = (event) => {
         calculator.result = undefined;
 
         allOperators.forEach((button) => {
-            button.classList.remove('pressed');
+                button.classList.remove('calculator__button--pressed');
         });
 
     } else {
