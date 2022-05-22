@@ -1,10 +1,11 @@
+@use "../abstracts/variables" as *;
+
 // Grid Rules
 
 .calculator {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-    gap: 0px 0px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 1fr);
     grid-auto-flow: row;
     grid-template-areas:
       "calculator__display calculator__display calculator__display calculator__display"
@@ -57,14 +58,12 @@
 
 .decimal-point { grid-area: decimal-point; }  
 
-// Mobile Specific Styling
-
-// this could be layouts???
+// Large Screen Specific Styling
 @media only screen and (min-width: 768px) {
   .calculator {
     width: 500px;
     height: 800px;
-    border: 20px solid black;
+    border: 20px solid $color-black;
     border-radius: 40px;
 
     &__display {

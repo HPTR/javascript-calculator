@@ -3,13 +3,12 @@
 .calculator {
     &__display {
         user-select: none;
-        color: black;
-        background-color: white;
-        border: 1px solid black;
+        color: $color-black;
+        background-color: $color-white;
+        border: 1px solid $color-black;
         font-size: 5rem;
         text-align: end;
         padding: 0px 20px;
         font-family: $font-primary;
-        cursor: not-allowed;
     }
 }

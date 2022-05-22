@@ -1,10 +1,11 @@
 @use "../abstracts/mixins" as *;
+@use  "../abstracts/variables" as *;
 
 body {
     @include flexCenter(column);
     justify-content: flex-start;
     height: 100vh;
-    background-color: #616161;
+    background-color: $color-background;
 }
 
 @media only screen and (min-width: 768px) {
