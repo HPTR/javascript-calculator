@@ -65,7 +65,6 @@ const handleOperatorPress = (event) => {
     event.target.classList.add('calculator__button--pressed');
 
     if (calculator.numOne && calculator.numTwo) {
-        console.log('sup');
         performCalculation();
     };
     
