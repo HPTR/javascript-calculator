@@ -16,10 +16,12 @@
 
         &--operator {
             background-color: $color-operator;
+            color: $color-black;
         }
 
         &--function, &--calculate {
             background-color: $color-function;
+            color: $color-black;
         }
 
         &:active {

@@ -10,6 +10,7 @@
   border: 1px solid #000000;
   text-decoration: none;
   touch-action: manipulation;
+  color: #000000;
 }
 .calculator__button--number {
   background-color: #525150;
@@ -17,9 +18,11 @@
 }
 .calculator__button--operator {
   background-color: #ff6200;
+  color: #000000;
 }
 .calculator__button--function, .calculator__button--calculate {
   background-color: #b8b8b8;
+  color: #000000;
 }
 .calculator__button:active {
   filter: brightness(130%);
