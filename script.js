@@ -30,10 +30,9 @@ const handleNumberPress = (event) => {
         display.value = event.target.value;
     };
 
-    //If an operator was the last button pressed, save the current number, and display the newly clicked number. Also clear pressed status of operators.
+    //If an operator was the last button pressed, display the newly clicked number. Also clear pressed status of operators.
     if (calculator['lastPressedType'] === 'operator') {
 
-        calculator.numOne = display.value;
         display.value = event.target.value;
 
         allOperators.forEach((button) => {
@@ -50,6 +49,13 @@ const handleNumberPress = (event) => {
 
 const handleOperatorPress = (event) => {
 
+    //Add the currently displayed number to the calculator object
+    if (!calculator.numOne) {
+        calculator.numOne = display.value;
+    } else {
+        calculator.numTwo = display.value;
+    };
+
     //Remove the pressed modifier from other operators
     allOperators.forEach((button) => {
             button.classList.remove('calculator__button--pressed');
@@ -57,6 +63,11 @@ const handleOperatorPress = (event) => {
 
     //Add the pressed modifier to the pressed operator
     event.target.classList.add('calculator__button--pressed');
+
+    if (calculator.numOne && calculator.numTwo) {
+        console.log('sup');
+        performCalculation();
+    };
     
     //Save pressed operator to the calculator object
     switch (event.target.value) {
@@ -74,9 +85,6 @@ const handleOperatorPress = (event) => {
             break;
     };
 
-    //Add the currently displayed number to the calculator object
-    calculator.numOne = Number(display.value);
-
     calculator.lastPressedType = 'operator';
 }
 
@@ -93,25 +101,7 @@ const handleCalculatePress = (event) => {
         return;
     }
 
-
-    //Perform the calculation and save the result to the calculator object
-    switch (calculator.operator) {
-        case '+':
-            calculator.result = Number(calculator.numOne) + Number(calculator.numTwo);
-            break;
-        case '-':
-            calculator.result = Number(calculator.numOne) - Number(calculator.numTwo);
-            break;
-        case '*':
-            calculator.result = Number(calculator.numOne) * Number(calculator.numTwo);
-            break;
-        case '/':
-            calculator.result = Number(calculator.numOne) / Number(calculator.numTwo);
-            break;
-    };
-
-    //Display the result at a maximum of 8 numbers
-    display.value = parseFloat(calculator.result.toFixed(8));
+    performCalculation();
 
     calculator.lastPressedType = 'calculate';
 }
@@ -160,6 +150,32 @@ const handleFunctionPress = (event) => {
     }
 
 
+}
+
+const performCalculation = () => {
+
+    if (calculator.result) {
+        calculator.numOne = calculator.result;
+    };
+
+    //Perform the calculation and save the result to the calculator object
+    switch (calculator.operator) {
+        case '+':
+            calculator.result = Number(calculator.numOne) + Number(calculator.numTwo);
+            break;
+        case '-':
+            calculator.result = Number(calculator.numOne) - Number(calculator.numTwo);
+            break;
+        case '*':
+            calculator.result = Number(calculator.numOne) * Number(calculator.numTwo);
+            break;
+        case '/':
+            calculator.result = Number(calculator.numOne) / Number(calculator.numTwo);
+            break;
+    };
+
+    //Display the result at a maximum of 8 numbers
+    display.value = parseFloat(calculator.result.toFixed(8));
 }
 
 // Event Listeners
