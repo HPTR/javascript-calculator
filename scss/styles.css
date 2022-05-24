@@ -171,12 +171,10 @@ body {
   .calculator__display {
     border-radius: 20px 20px 0px 0px;
   }
-
-  .zero {
+  .calculator .zero {
     border-radius: 0px 0px 0px 20px;
   }
-
-  .calculate {
+  .calculator .calculate {
     border-radius: 0px 0px 20px 0px;
   }
 }/*# sourceMappingURL=styles.css.map */
